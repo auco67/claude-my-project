@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MINAMO AI｜静かに、深く、働くAI</title>
+  <meta name="description" content="MINAMO AI は、企業の業務に深く溶け込むAIエージェントを設計・開発する架空のAI開発企業です。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#F5F2EC',
+            paperDeep: '#ECE7DE',
+            ink: '#14181F',
+            inkSoft: '#4A5160',
+            line: '#D8D2C6',
+            minamo: { DEFAULT: '#1F6F78', light: '#5FA8AE', pale: '#DCEBEA' },
+          },
+          fontFamily: {
+            serif: ['"Shippori Mincho"', 'serif'],
+            sans: ['"Noto Sans JP"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          keyframes: {
+            ripple: {
+              '0%': { transform: 'scale(0.6)', opacity: '0.7' },
+              '100%': { transform: 'scale(1.6)', opacity: '0' },
+            },
+          },
+          animation: {
+            ripple: 'ripple 6s ease-out infinite',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.isVisible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .animate-ripple { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body class="bg-paper font-sans text-ink">
+
+  <!-- ===== Header ===== -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-line/70 bg-paper/85 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <a href="#top" class="flex items-center gap-2">
+        <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="14" fill="none" stroke="#1F6F78" stroke-width="1.5" />
+          <circle cx="16" cy="16" r="9" fill="none" stroke="#1F6F78" stroke-width="1.5" opacity=".6" />
+          <circle cx="16" cy="16" r="3.5" fill="#1F6F78" />
+        </svg>
+        <span class="font-mono text-sm font-medium tracking-[0.2em]">MINAMO&nbsp;AI</span>
+      </a>
+
+      <nav class="hidden items-center gap-8 text-sm text-inkSoft md:flex" aria-label="グローバルナビゲーション">
+        <a href="#service" class="hover:text-ink">サービス</a>
+        <a href="#product" class="hover:text-ink">プロダクト</a>
+        <a href="#process" class="hover:text-ink">導入の流れ</a>
+        <a href="#cases" class="hover:text-ink">導入事例</a>
+        <a href="#company" class="hover:text-ink">会社情報</a>
+        <a href="#contact" class="rounded-full bg-ink px-5 py-2 text-paper transition hover:bg-minamo">お問い合わせ</a>
+      </nav>
+
+      <button id="menuButton" type="button" class="md:hidden" aria-controls="mobileMenu" aria-expanded="false" aria-label="メニューを開く">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 8h16M4 16h16" />
+        </svg>
+      </button>
+    </div>
+
+    <nav id="mobileMenu" class="hidden border-t border-line bg-paper px-4 pb-6 pt-2 md:hidden" aria-label="モバイルナビゲーション">
+      <a href="#service" class="block border-b border-line py-3">サービス</a>
+      <a href="#product" class="block border-b border-line py-3">プロダクト</a>
+      <a href="#process" class="block border-b border-line py-3">導入の流れ</a>
+      <a href="#cases" class="block border-b border-line py-3">導入事例</a>
+      <a href="#company" class="block border-b border-line py-3">会社情報</a>
+      <a href="#contact" class="mt-4 block rounded-full bg-ink py-3 text-center text-paper">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== Hero ===== -->
+    <section class="relative overflow-hidden pt-32 sm:pt-40">
+      <div class="pointer-events-none absolute -right-40 top-10 h-[560px] w-[560px] sm:-right-20" aria-hidden="true">
+        <div class="absolute inset-0 rounded-full border border-minamo/30 animate-ripple"></div>
+        <div class="absolute inset-0 rounded-full border border-minamo/30 animate-ripple [animation-delay:2s]"></div>
+        <div class="absolute inset-0 rounded-full border border-minamo/30 animate-ripple [animation-delay:4s]"></div>
+        <div class="absolute inset-[38%] rounded-full bg-minamo/10"></div>
+      </div>
+
+      <div class="relative mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-32">
+        <p class="reveal font-mono text-xs tracking-[0.25em] text-minamo">AI AGENT DEVELOPMENT ／ SINCE 2019</p>
+        <h1 class="reveal mt-6 font-serif text-4xl leading-[1.35] sm:text-6xl sm:leading-[1.3]">
+          静かに、深く、<br />
+          <span class="text-minamo">働く</span>AIを。
+        </h1>
+        <p class="reveal mt-8 max-w-xl leading-loose text-inkSoft">
+          MINAMO AI は、企業の現場に溶け込むAIエージェントを設計・開発しています。
+          派手なデモではなく、毎日の業務で確かに動き続けること。
+          水面の下で、仕事の流れを整えます。
+        </p>
+        <div class="reveal mt-10 flex flex-col gap-3 sm:flex-row">
+          <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-sm text-paper transition hover:bg-minamo">
+            無料で相談する
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href="#product" class="inline-flex items-center justify-center rounded-full border border-ink/20 px-8 py-4 text-sm transition hover:border-ink">
+            プロダクトを見る
+          </a>
+        </div>
+
+        <dl class="reveal mt-20 grid max-w-3xl grid-cols-3 gap-4 border-t border-line pt-8">
+          <div>
+            <dt class="text-xs text-inkSoft">導入企業数</dt>
+            <dd class="mt-1 font-serif text-3xl sm:text-4xl">320<span class="ml-1 text-base">社</span></dd>
+          </div>
+          <div>
+            <dt class="text-xs text-inkSoft">平均工数削減</dt>
+            <dd class="mt-1 font-serif text-3xl sm:text-4xl">62<span class="ml-1 text-base">%</span></dd>
+          </div>
+          <div>
+            <dt class="text-xs text-inkSoft">継続利用率</dt>
+            <dd class="mt-1 font-serif text-3xl sm:text-4xl">98<span class="ml-1 text-base">%</span></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== Logos ===== -->
+    <section class="border-y border-line bg-paperDeep/60 py-10" aria-label="導入企業">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <p class="text-center text-xs text-inkSoft">多様な業界のリーディングカンパニーに選ばれています（※社名はすべて架空です）</p>
+        <ul class="mt-6 grid grid-cols-2 gap-6 text-center font-mono text-sm tracking-widest text-inkSoft/80 sm:grid-cols-3 md:grid-cols-6">
+          <li>KAZAMI&nbsp;Bank</li>
+          <li>TSUMUGI</li>
+          <li>Hoshino&nbsp;Logi</li>
+          <li>AOBA&nbsp;Med</li>
+          <li>SHIRANE</li>
+          <li>Kurenai&nbsp;Mfg</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Service ===== -->
+    <section id="service" class="py-24 sm:py-32">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <p class="font-mono text-xs tracking-[0.25em] text-minamo">01 — SERVICE</p>
+            <h2 class="mt-4 font-serif text-3xl leading-snug sm:text-4xl">構想から運用まで、<br class="sm:hidden" />一貫して伴走します。</h2>
+          </div>
+          <p class="max-w-md text-sm leading-loose text-inkSoft">
+            「AIで何ができるか」ではなく「どの業務を、どこまで任せるか」から始めます。
+          </p>
+        </div>
+
+        <div class="mt-16 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-3">
+          <article class="reveal bg-paper p-8 sm:p-10">
+            <span class="font-mono text-xs text-minamo">A</span>
+            <h3 class="mt-6 font-serif text-2xl">AIエージェント開発</h3>
+            <p class="mt-4 text-sm leading-loose text-inkSoft">
+              社内システムやSaaSと連携し、問い合わせ対応・帳票処理・調査業務などを自律的にこなすエージェントを構築します。
+            </p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li class="flex gap-2"><span class="text-minamo">—</span>業務フロー分析と設計</li>
+              <li class="flex gap-2"><span class="text-minamo">—</span>既存システム連携</li>
+              <li class="flex gap-2"><span class="text-minamo">—</span>人による承認フロー組込み</li>
+            </ul>
+          </article>
+
+          <article class="reveal bg-paper p-8 sm:p-10">
+            <span class="font-mono text-xs text-minamo">B</span>
+            <h3 class="mt-6 font-serif text-2xl">ナレッジ基盤構築</h3>
+            <p class="mt-4 text-sm leading-loose text-inkSoft">
+              散らばった社内文書・議事録・マニュアルを横断検索できる基盤を整備し、根拠付きで回答するAIを実現します。
+            </p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li class="flex gap-2"><span class="text-minamo">—</span>文書の構造化・権限管理</li>
+              <li class="flex gap-2"><span class="text-minamo">—</span>出典表示つき回答</li>
+              <li class="flex gap-2"><span class="text-minamo">—</span>精度の継続評価</li>
+            </ul>
+          </article>
+
+          <article class="reveal bg-paper p-8 sm:p-10">
+            <span class="font-mono text-xs text-minamo">C</span>
+            <h3 class="mt-6 font-serif text-2xl">AI運用・ガバナンス</h3>
+            <p class="mt-4 text-sm leading-loose text-inkSoft">
+              ログ監視、品質評価、セキュリティ審査、社内ガイドライン策定まで。導入後に「使われ続ける」状態をつくります。
+            </p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li class="flex gap-2"><span class="text-minamo">—</span>品質モニタリング</li>
+              <li class="flex gap-2"><span class="text-minamo">—</span>リスク評価・監査対応</li>
+              <li class="flex gap-2"><span class="text-minamo">—</span>社内研修プログラム</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Product ===== -->
+    <section id="product" class="bg-ink py-24 text-paper sm:py-32">
+      <div class="mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-2">
+        <div class="reveal">
+          <p class="font-mono text-xs tracking-[0.25em] text-minamo-light">02 — PRODUCT</p>
+          <h2 class="mt-4 font-serif text-3xl leading-snug sm:text-4xl">MINAMO Desk</h2>
+          <p class="mt-2 text-paper/60">業務エージェント統合プラットフォーム</p>
+          <p class="mt-8 leading-loose text-paper/80">
+            複数のAIエージェントをひとつの画面で管理。誰が、何を、どの根拠で処理したかがすべて記録され、
+            重要な判断の前には必ず担当者の承認を挟みます。
+          </p>
+          <ul class="mt-10 grid gap-6 sm:grid-cols-2">
+            <li class="border-l border-minamo-light/50 pl-4">
+              <p class="font-medium">承認フロー</p>
+              <p class="mt-1 text-sm text-paper/60">送信・支払い等の操作は人が最終確認</p>
+            </li>
+            <li class="border-l border-minamo-light/50 pl-4">
+              <p class="font-medium">監査ログ</p>
+              <p class="mt-1 text-sm text-paper/60">全処理の入力・出力・根拠を保存</p>
+            </li>
+            <li class="border-l border-minamo-light/50 pl-4">
+              <p class="font-medium">ノーコード設定</p>
+              <p class="mt-1 text-sm text-paper/60">現場担当者が自分で手順を調整</p>
+            </li>
+            <li class="border-l border-minamo-light/50 pl-4">
+              <p class="font-medium">国内リージョン</p>
+              <p class="mt-1 text-sm text-paper/60">データは国内データセンターで管理</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mock UI -->
+        <div class="reveal rounded-2xl border border-paper/10 bg-[#1C222C] p-4 shadow-2xl sm:p-6" aria-label="MINAMO Desk の画面イメージ">
+          <div class="flex items-center justify-between border-b border-paper/10 pb-4">
+            <div class="flex gap-1.5" aria-hidden="true">
+              <span class="h-2.5 w-2.5 rounded-full bg-paper/20"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-paper/20"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-paper/20"></span>
+            </div>
+            <span class="font-mono text-[11px] text-paper/50">desk.minamo.example / 経理エージェント</span>
+          </div>
+
+          <ol class="mt-5 space-y-4 text-sm">
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-minamo-light"></span>
+              <div>
+                <p class="font-mono text-[11px] text-paper/40">09:02</p>
+                <p>請求書 42件を受信。取引先マスタと照合しました。</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-minamo-light"></span>
+              <div>
+                <p class="font-mono text-[11px] text-paper/40">09:04</p>
+                <p>39件は発注書と一致。仕訳データを作成しました。</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-amber-400"></span>
+              <div class="flex-1">
+                <p class="font-mono text-[11px] text-paper/40">09:04</p>
+                <p>3件で金額差異を検出。確認をお願いします。</p>
+                <div class="mt-3 rounded-lg border border-paper/10 bg-paper/5 p-3">
+                  <div class="flex justify-between font-mono text-xs">
+                    <span class="text-paper/60">INV-2026-1187</span>
+                    <span class="text-amber-300">差異 ¥12,400</span>
+                  </div>
+                  <p class="mt-2 text-xs text-paper/60">根拠：発注書 PO-8832 の単価改定（10/1）が未反映</p>
+                  <div class="mt-3 flex gap-2">
+                    <span class="rounded-md bg-minamo px-3 py-1.5 text-xs">承認して修正</span>
+                    <span class="rounded-md border border-paper/20 px-3 py-1.5 text-xs text-paper/70">差し戻す</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Process ===== -->
+    <section id="process" class="py-24 sm:py-32">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal">
+          <p class="font-mono text-xs tracking-[0.25em] text-minamo">03 — PROCESS</p>
+          <h2 class="mt-4 font-serif text-3xl leading-snug sm:text-4xl">最短6週間で、本番運用へ。</h2>
+        </div>
+
+        <ol class="mt-16 grid gap-10 md:grid-cols-4 md:gap-6">
+          <li class="reveal relative md:pt-8">
+            <span class="hidden md:absolute md:left-0 md:right-0 md:top-0 md:block md:border-t md:border-line"></span>
+            <span class="hidden md:absolute md:-top-1.5 md:left-0 md:block md:h-3 md:w-3 md:rounded-full md:bg-minamo"></span>
+            <p class="font-mono text-xs text-minamo">WEEK 1</p>
+            <h3 class="mt-2 font-serif text-xl">業務ヒアリング</h3>
+            <p class="mt-3 text-sm leading-relaxed text-inkSoft">対象業務を可視化し、AIに任せる範囲と期待効果を数値で定義します。</p>
+          </li>
+          <li class="reveal relative md:pt-8">
+            <span class="hidden md:absolute md:left-0 md:right-0 md:top-0 md:block md:border-t md:border-line"></span>
+            <span class="hidden md:absolute md:-top-1.5 md:left-0 md:block md:h-3 md:w-3 md:rounded-full md:bg-minamo"></span>
+            <p class="font-mono text-xs text-minamo">WEEK 2–3</p>
+            <h3 class="mt-2 font-serif text-xl">プロトタイプ</h3>
+            <p class="mt-3 text-sm leading-relaxed text-inkSoft">実データの一部で動く試作品を作り、現場の方に触っていただきます。</p>
+          </li>
+          <li class="reveal relative md:pt-8">
+            <span class="hidden md:absolute md:left-0 md:right-0 md:top-0 md:block md:border-t md:border-line"></span>
+            <span class="hidden md:absolute md:-top-1.5 md:left-0 md:block md:h-3 md:w-3 md:rounded-full md:bg-minamo"></span>
+            <p class="font-mono text-xs text-minamo">WEEK 4–5</p>
+            <h3 class="mt-2 font-serif text-xl">評価・調整</h3>
+            <p class="mt-3 text-sm leading-relaxed text-inkSoft">精度・安全性を評価セットで検証し、承認フローや権限を調整します。</p>
+          </li>
+          <li class="reveal relative md:pt-8">
+            <span class="hidden md:absolute md:left-0 md:right-0 md:top-0 md:block md:border-t md:border-line"></span>
+            <span class="hidden md:absolute md:-top-1.5 md:left-0 md:block md:h-3 md:w-3 md:rounded-full md:bg-minamo"></span>
+            <p class="font-mono text-xs text-minamo">WEEK 6〜</p>
+            <h3 class="mt-2 font-serif text-xl">本番運用・改善</h3>
+            <p class="mt-3 text-sm leading-relaxed text-inkSoft">月次レポートで効果を共有し、対象業務を段階的に広げていきます。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Cases ===== -->
+    <section id="cases" class="border-t border-line bg-paperDeep/60 py-24 sm:py-32">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal">
+          <p class="font-mono text-xs tracking-[0.25em] text-minamo">04 — CASES</p>
+          <h2 class="mt-4 font-serif text-3xl leading-snug sm:text-4xl">導入事例</h2>
+        </div>
+
+        <div class="mt-16 grid gap-6 md:grid-cols-3">
+          <article class="reveal flex flex-col rounded-2xl border border-line bg-paper p-8">
+            <p class="text-xs text-inkSoft">金融｜KAZAMI Bank 様</p>
+            <p class="mt-6 font-serif text-5xl text-minamo">−70<span class="text-2xl">%</span></p>
+            <p class="mt-1 text-sm text-inkSoft">融資審査書類の確認時間</p>
+            <p class="mt-6 flex-1 text-sm leading-loose">
+              「担当者は判断が必要な箇所だけに集中できるようになりました。根拠が必ず示されるので、監査部門の理解も早かったです。」
+            </p>
+          </article>
+
+          <article class="reveal flex flex-col rounded-2xl border border-line bg-paper p-8">
+            <p class="text-xs text-inkSoft">物流｜Hoshino Logi 様</p>
+            <p class="mt-6 font-serif text-5xl text-minamo">24<span class="text-2xl">h</span></p>
+            <p class="mt-1 text-sm text-inkSoft">配送問い合わせの一次対応</p>
+            <p class="mt-6 flex-1 text-sm leading-loose">
+              「夜間の問い合わせにも即時対応できるように。複雑な案件だけが朝、要点つきで担当者に届きます。」
+            </p>
+          </article>
+
+          <article class="reveal flex flex-col rounded-2xl border border-line bg-paper p-8">
+            <p class="text-xs text-inkSoft">製造｜Kurenai Mfg 様</p>
+            <p class="mt-6 font-serif text-5xl text-minamo">1.2<span class="text-2xl">万件</span></p>
+            <p class="mt-1 text-sm text-inkSoft">検索可能になった技術文書</p>
+            <p class="mt-6 flex-1 text-sm leading-loose">
+              「ベテランの頭の中にしかなかったノウハウが、若手でも引き出せる形になりました。」
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Company ===== -->
+    <section id="company" class="py-24 sm:py-32">
+      <div class="mx-auto grid max-w-6xl gap-16 px-4 sm:px-6 lg:grid-cols-[1fr_1.4fr]">
+        <div class="reveal">
+          <p class="font-mono text-xs tracking-[0.25em] text-minamo">05 — COMPANY</p>
+          <h2 class="mt-4 font-serif text-3xl leading-snug sm:text-4xl">水面のように、<br />静かで確かな技術を。</h2>
+          <p class="mt-8 text-sm leading-loose text-inkSoft">
+            社名の「ミナモ（水面）」には、表に見える変化は穏やかでも、その下で大きな流れを支える存在でありたいという想いを込めています。
+          </p>
+        </div>
+
+        <dl class="reveal divide-y divide-line border-y border-line text-sm">
+          <div class="grid grid-cols-[7rem_1fr] gap-4 py-4">
+            <dt class="text-inkSoft">会社名</dt><dd>株式会社ミナモAI（架空）</dd>
+          </div>
+          <div class="grid grid-cols-[7rem_1fr] gap-4 py-4">
+            <dt class="text-inkSoft">設立</dt><dd>2019年4月</dd>
+          </div>
+          <div class="grid grid-cols-[7rem_1fr] gap-4 py-4">
+            <dt class="text-inkSoft">代表者</dt><dd>代表取締役 水野 透</dd>
+          </div>
+          <div class="grid grid-cols-[7rem_1fr] gap-4 py-4">
+            <dt class="text-inkSoft">所在地</dt><dd>東京都千代田区架空町1-2-3 ミナモビル 8F</dd>
+          </div>
+          <div class="grid grid-cols-[7rem_1fr] gap-4 py-4">
+            <dt class="text-inkSoft">従業員数</dt><dd>148名（うちエンジニア・研究者 96名）</dd>
+          </div>
+          <div class="grid grid-cols-[7rem_1fr] gap-4 py-4">
+            <dt class="text-inkSoft">事業内容</dt><dd>AIエージェントの研究開発、業務AI導入支援、AIガバナンスコンサルティング</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="bg-minamo py-24 text-paper sm:py-32">
+      <div class="mx-auto grid max-w-6xl gap-16 px-4 sm:px-6 lg:grid-cols-2">
+        <div class="reveal">
+          <p class="font-mono text-xs tracking-[0.25em] text-minamo-pale">06 — CONTACT</p>
+          <h2 class="mt-4 font-serif text-3xl leading-snug sm:text-4xl">まずは、業務のお話から。</h2>
+          <p class="mt-8 leading-loose text-paper/80">
+            「どこから始めればいいかわからない」という段階でも大丈夫です。
+            30分の無料相談で、AI化の候補になる業務を一緒に整理します。
+          </p>
+          <ul class="mt-8 space-y-2 text-sm text-paper/80">
+            <li>✓ 2営業日以内にご返信</li>
+            <li>✓ オンライン・訪問どちらも対応</li>
+            <li>✓ 秘密保持契約の締結も可能</li>
+          </ul>
+        </div>
+
+        <form id="contactForm" class="reveal space-y-5 rounded-2xl bg-paper p-6 text-ink sm:p-8" novalidate>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="block text-sm">
+              <span class="text-inkSoft">会社名</span>
+              <input name="companyName" type="text" required class="mt-2 w-full rounded-lg border border-line bg-white px-4 py-3 outline-none focus:border-minamo focus:ring-2 focus:ring-minamo/20" />
+            </label>
+            <label class="block text-sm">
+              <span class="text-inkSoft">お名前</span>
+              <input name="userName" type="text" required class="mt-2 w-full rounded-lg border border-line bg-white px-4 py-3 outline-none focus:border-minamo focus:ring-2 focus:ring-minamo/20" />
+            </label>
+          </div>
+          <label class="block text-sm">
+            <span class="text-inkSoft">メールアドレス</span>
+            <input name="email" type="email" required class="mt-2 w-full rounded-lg border border-line bg-white px-4 py-3 outline-none focus:border-minamo focus:ring-2 focus:ring-minamo/20" />
+          </label>
+          <label class="block text-sm">
+            <span class="text-inkSoft">ご相談内容</span>
+            <textarea name="message" rows="4" class="mt-2 w-full rounded-lg border border-line bg-white px-4 py-3 outline-none focus:border-minamo focus:ring-2 focus:ring-minamo/20"></textarea>
+          </label>
+          <button type="submit" class="w-full rounded-full bg-ink py-4 text-sm text-paper transition hover:bg-minamo">
+            送信する
+          </button>
+          <p id="formMessage" class="hidden text-center text-sm" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="bg-ink py-12 text-paper/60">
+    <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 text-xs sm:px-6 md:flex-row md:items-center">
+      <span class="font-mono tracking-[0.2em] text-paper">MINAMO&nbsp;AI</span>
+      <nav class="flex flex-wrap gap-6" aria-label="フッターナビゲーション">
+        <a href="#" class="hover:text-paper">プライバシーポリシー</a>
+        <a href="#" class="hover:text-paper">AI利用ポリシー</a>
+        <a href="#" class="hover:text-paper">採用情報</a>
+      </nav>
+      <p>© 2026 MINAMO AI Inc.（架空の企業です）</p>
+    </div>
+  </footer>
+
+  <script>
+    const REVEAL_THRESHOLD = 0.15;
+    const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // モバイルメニューの開閉
+    function toggleMobileMenu() {
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'メニューを開く' : 'メニューを閉じる');
+      mobileMenu.classList.toggle('hidden', isOpen);
+    }
+
+    function closeMobileMenu() {
+      const menuButton = document.getElementById('menuButton');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'メニューを開く');
+      document.getElementById('mobileMenu').classList.add('hidden');
+    }
+
+    // スクロールに応じたフェードイン
+    function observeRevealElements() {
+      const revealElements = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        revealElements.forEach((element) => element.classList.add('isVisible'));
+        return;
+      }
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('isVisible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: REVEAL_THRESHOLD });
+      revealElements.forEach((element) => revealObserver.observe(element));
+    }
+
+    // 問い合わせフォームの簡易バリデーション（送信はデモ）
+    function validateContactForm(formData) {
+      const errors = [];
+      if (!formData.get('companyName').trim()) errors.push('会社名');
+      if (!formData.get('userName').trim()) errors.push('お名前');
+      if (!EMAIL_PATTERN.test(formData.get('email').trim())) errors.push('メールアドレス');
+      return errors;
+    }
+
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const contactForm = event.currentTarget;
+      const formMessage = document.getElementById('formMessage');
+      const errors = validateContactForm(new FormData(contactForm));
+
+      formMessage.classList.remove('hidden', 'text-red-600', 'text-minamo');
+      if (errors.length > 0) {
+        formMessage.textContent = `${errors.join('・')}を正しく入力してください。`;
+        formMessage.classList.add('text-red-600');
+        return;
+      }
+      formMessage.textContent = 'お問い合わせありがとうございます。担当者よりご連絡いたします。（デモのため送信はされません）';
+      formMessage.classList.add('text-minamo');
+      contactForm.reset();
+    }
+
+    function initializePage() {
+      document.getElementById('menuButton').addEventListener('click', toggleMobileMenu);
+      document.querySelectorAll('#mobileMenu a').forEach((link) => link.addEventListener('click', closeMobileMenu));
+      document.getElementById('contactForm').addEventListener('submit', handleContactSubmit);
+      observeRevealElements();
+    }
+
+    document.addEventListener('DOMContentLoaded', initializePage);
+  </script>
+</body>
+</html>

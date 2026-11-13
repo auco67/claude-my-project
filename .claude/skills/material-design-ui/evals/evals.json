@@ -1,0 +1,25 @@
+{
+  "skill_name": "material-design-ui",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Next.jsでタスク管理アプリのダッシュボード画面をマテリアルデザインで作って。スマホとPC両対応で",
+      "expected_output": "Next.js + TypeScriptのダッシュボード。M3トークン準拠、画面幅でNavigation Bar/Rail/Drawerを切替",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "lp/index.html をGoogleのマテリアルデザインっぽくリデザインして。ブランドカラーは今の #1F6F78 を活かしたい",
+      "expected_output": "#1F6F78から生成したM3パレットでリデザインされたLP HTML",
+      "files": [
+        "lp/index.html"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "MUIでログインフォームを作りたい。ダークモードにも対応して",
+      "expected_output": "MUIのM3寄せテーマでライト/ダーク対応のログインフォーム",
+      "files": []
+    }
+  ]
+}

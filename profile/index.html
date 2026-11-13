@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>佐藤 ひかり | フリーランス UI/UX デザイナー</title>
+<meta name="description" content="フリーランスのUI/UXデザイナー兼フロントエンドエンジニア 佐藤 ひかり のプロフィール" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0" />
+<style>
+/*
+ * Material Design 3 システムトークン（ベースライン: シード #6750A4）
+ * - カラーはブランドカラーがある場合 scripts/generate-palette.mjs の出力で置き換える
+ * - ダークモード: OS設定に追従。<html data-theme="light|dark"> で手動上書き可
+ */
+
+:root {
+  /* ---------- Typeface ---------- */
+  --md-ref-typeface-brand: "Roboto", "Noto Sans JP", system-ui, sans-serif;
+  --md-ref-typeface-plain: "Roboto", "Noto Sans JP", system-ui, sans-serif;
+
+  /* ---------- Typescale (font shorthand: weight size/line-height family) ---------- */
+  --md-sys-typescale-display-large: 400 57px/64px var(--md-ref-typeface-brand);
+  --md-sys-typescale-display-medium: 400 45px/52px var(--md-ref-typeface-brand);
+  --md-sys-typescale-display-small: 400 36px/44px var(--md-ref-typeface-brand);
+  --md-sys-typescale-headline-large: 400 32px/40px var(--md-ref-typeface-brand);
+  --md-sys-typescale-headline-medium: 400 28px/36px var(--md-ref-typeface-brand);
+  --md-sys-typescale-headline-small: 400 24px/32px var(--md-ref-typeface-brand);
+  --md-sys-typescale-title-large: 400 22px/28px var(--md-ref-typeface-brand);
+  --md-sys-typescale-title-medium: 500 16px/24px var(--md-ref-typeface-plain);
+  --md-sys-typescale-title-small: 500 14px/20px var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-large: 400 16px/24px var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-medium: 400 14px/20px var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-small: 400 12px/16px var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-large: 500 14px/20px var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-medium: 500 12px/16px var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-small: 500 11px/16px var(--md-ref-typeface-plain);
+  /* letter-spacing は font shorthand に含められないため別トークン */
+  --md-sys-typescale-display-large-tracking: -0.25px;
+  --md-sys-typescale-title-medium-tracking: 0.15px;
+  --md-sys-typescale-title-small-tracking: 0.1px;
+  --md-sys-typescale-body-large-tracking: 0.5px;
+  --md-sys-typescale-body-medium-tracking: 0.25px;
+  --md-sys-typescale-body-small-tracking: 0.4px;
+  --md-sys-typescale-label-large-tracking: 0.1px;
+  --md-sys-typescale-label-medium-tracking: 0.5px;
+  --md-sys-typescale-label-small-tracking: 0.5px;
+
+  /* ---------- Shape ---------- */
+  --md-sys-shape-corner-none: 0;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-full: 9999px;
+
+  /* ---------- Elevation (shadow) ---------- */
+  --md-sys-elevation-0: none;
+  --md-sys-elevation-1: 0 1px 2px rgb(0 0 0 / 0.3), 0 1px 3px 1px rgb(0 0 0 / 0.15);
+  --md-sys-elevation-2: 0 1px 2px rgb(0 0 0 / 0.3), 0 2px 6px 2px rgb(0 0 0 / 0.15);
+  --md-sys-elevation-3: 0 1px 3px rgb(0 0 0 / 0.3), 0 4px 8px 3px rgb(0 0 0 / 0.15);
+  --md-sys-elevation-4: 0 2px 3px rgb(0 0 0 / 0.3), 0 6px 10px 4px rgb(0 0 0 / 0.15);
+  --md-sys-elevation-5: 0 4px 4px rgb(0 0 0 / 0.3), 0 8px 12px 6px rgb(0 0 0 / 0.15);
+
+  /* ---------- State layers ---------- */
+  --md-sys-state-hover-opacity: 0.08;
+  --md-sys-state-focus-opacity: 0.1;
+  --md-sys-state-pressed-opacity: 0.1;
+  --md-sys-state-dragged-opacity: 0.16;
+  --md-sys-state-disabled-container-opacity: 0.12;
+  --md-sys-state-disabled-content-opacity: 0.38;
+
+  /* ---------- Motion ---------- */
+  --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
+  --md-sys-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+  --md-sys-motion-duration-short1: 50ms;
+  --md-sys-motion-duration-short2: 100ms;
+  --md-sys-motion-duration-short3: 150ms;
+  --md-sys-motion-duration-short4: 200ms;
+  --md-sys-motion-duration-medium1: 250ms;
+  --md-sys-motion-duration-medium2: 300ms;
+  --md-sys-motion-duration-medium3: 350ms;
+  --md-sys-motion-duration-medium4: 400ms;
+  --md-sys-motion-duration-long1: 450ms;
+  --md-sys-motion-duration-long2: 500ms;
+  --md-sys-motion-duration-long3: 550ms;
+  --md-sys-motion-duration-long4: 600ms;
+  --md-sys-motion-duration-extra-long1: 700ms;
+  --md-sys-motion-duration-extra-long2: 800ms;
+  --md-sys-motion-duration-extra-long3: 900ms;
+  --md-sys-motion-duration-extra-long4: 1000ms;
+}
+
+/* ---------- Color: Light ---------- */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --md-sys-color-primary: #6750A4;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #EADDFF;
+  --md-sys-color-on-primary-container: #4F378B;
+  --md-sys-color-secondary: #625B71;
+  --md-sys-color-on-secondary: #FFFFFF;
+  --md-sys-color-secondary-container: #E8DEF8;
+  --md-sys-color-on-secondary-container: #4A4458;
+  --md-sys-color-tertiary: #7D5260;
+  --md-sys-color-on-tertiary: #FFFFFF;
+  --md-sys-color-tertiary-container: #FFD8E4;
+  --md-sys-color-on-tertiary-container: #633B48;
+  --md-sys-color-error: #B3261E;
+  --md-sys-color-on-error: #FFFFFF;
+  --md-sys-color-error-container: #F9DEDC;
+  --md-sys-color-on-error-container: #8C1D18;
+  --md-sys-color-surface: #FEF7FF;
+  --md-sys-color-on-surface: #1D1B20;
+  --md-sys-color-surface-variant: #E7E0EC;
+  --md-sys-color-on-surface-variant: #49454F;
+  --md-sys-color-surface-dim: #DED8E1;
+  --md-sys-color-surface-bright: #FEF7FF;
+  --md-sys-color-surface-container-lowest: #FFFFFF;
+  --md-sys-color-surface-container-low: #F7F2FA;
+  --md-sys-color-surface-container: #F3EDF7;
+  --md-sys-color-surface-container-high: #ECE6F0;
+  --md-sys-color-surface-container-highest: #E6E0E9;
+  --md-sys-color-outline: #79747E;
+  --md-sys-color-outline-variant: #CAC4D0;
+  --md-sys-color-inverse-surface: #322F35;
+  --md-sys-color-inverse-on-surface: #F5EFF7;
+  --md-sys-color-inverse-primary: #D0BCFF;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-shadow: #000000;
+}
+
+/* ---------- Color: Dark ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --md-sys-color-primary: #D0BCFF;
+    --md-sys-color-on-primary: #381E72;
+    --md-sys-color-primary-container: #4F378B;
+    --md-sys-color-on-primary-container: #EADDFF;
+    --md-sys-color-secondary: #CCC2DC;
+    --md-sys-color-on-secondary: #332D41;
+    --md-sys-color-secondary-container: #4A4458;
+    --md-sys-color-on-secondary-container: #E8DEF8;
+    --md-sys-color-tertiary: #EFB8C8;
+    --md-sys-color-on-tertiary: #492532;
+    --md-sys-color-tertiary-container: #633B48;
+    --md-sys-color-on-tertiary-container: #FFD8E4;
+    --md-sys-color-error: #F2B8B5;
+    --md-sys-color-on-error: #601410;
+    --md-sys-color-error-container: #8C1D18;
+    --md-sys-color-on-error-container: #F9DEDC;
+    --md-sys-color-surface: #141218;
+    --md-sys-color-on-surface: #E6E0E9;
+    --md-sys-color-surface-variant: #49454F;
+    --md-sys-color-on-surface-variant: #CAC4D0;
+    --md-sys-color-surface-dim: #141218;
+    --md-sys-color-surface-bright: #3B383E;
+    --md-sys-color-surface-container-lowest: #0F0D13;
+    --md-sys-color-surface-container-low: #1D1B20;
+    --md-sys-color-surface-container: #211F26;
+    --md-sys-color-surface-container-high: #2B2930;
+    --md-sys-color-surface-container-highest: #36343B;
+    --md-sys-color-outline: #938F99;
+    --md-sys-color-outline-variant: #49454F;
+    --md-sys-color-inverse-surface: #E6E0E9;
+    --md-sys-color-inverse-on-surface: #322F35;
+    --md-sys-color-inverse-primary: #6750A4;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-shadow: #000000;
+  }
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --md-sys-color-primary: #D0BCFF;
+  --md-sys-color-on-primary: #381E72;
+  --md-sys-color-primary-container: #4F378B;
+  --md-sys-color-on-primary-container: #EADDFF;
+  --md-sys-color-secondary: #CCC2DC;
+  --md-sys-color-on-secondary: #332D41;
+  --md-sys-color-secondary-container: #4A4458;
+  --md-sys-color-on-secondary-container: #E8DEF8;
+  --md-sys-color-tertiary: #EFB8C8;
+  --md-sys-color-on-tertiary: #492532;
+  --md-sys-color-tertiary-container: #633B48;
+  --md-sys-color-on-tertiary-container: #FFD8E4;
+  --md-sys-color-error: #F2B8B5;
+  --md-sys-color-on-error: #601410;
+  --md-sys-color-error-container: #8C1D18;
+  --md-sys-color-on-error-container: #F9DEDC;
+  --md-sys-color-surface: #141218;
+  --md-sys-color-on-surface: #E6E0E9;
+  --md-sys-color-surface-variant: #49454F;
+  --md-sys-color-on-surface-variant: #CAC4D0;
+  --md-sys-color-surface-dim: #141218;
+  --md-sys-color-surface-bright: #3B383E;
+  --md-sys-color-surface-container-lowest: #0F0D13;
+  --md-sys-color-surface-container-low: #1D1B20;
+  --md-sys-color-surface-container: #211F26;
+  --md-sys-color-surface-container-high: #2B2930;
+  --md-sys-color-surface-container-highest: #36343B;
+  --md-sys-color-outline: #938F99;
+  --md-sys-color-outline-variant: #49454F;
+  --md-sys-color-inverse-surface: #E6E0E9;
+  --md-sys-color-inverse-on-surface: #322F35;
+  --md-sys-color-inverse-primary: #6750A4;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-shadow: #000000;
+}
+
+body {
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font: var(--md-sys-typescale-body-large);
+  letter-spacing: var(--md-sys-typescale-body-large-tracking);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* =========================================================
+   Base
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { margin: 0; min-height: 100vh; }
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: var(--md-sys-color-primary); }
+img { max-width: 100%; display: block; }
+
+.material-symbols-rounded {
+  font-size: 24px; line-height: 1;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  user-select: none;
+}
+.visuallyHidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Typescale utilities */
+.displaySmall   { font: var(--md-sys-typescale-display-small); }
+.headlineLarge  { font: var(--md-sys-typescale-headline-large); }
+.headlineSmall  { font: var(--md-sys-typescale-headline-small); }
+.titleLarge     { font: var(--md-sys-typescale-title-large); }
+.titleMedium    { font: var(--md-sys-typescale-title-medium); letter-spacing: var(--md-sys-typescale-title-medium-tracking); }
+.titleSmall     { font: var(--md-sys-typescale-title-small); letter-spacing: var(--md-sys-typescale-title-small-tracking); }
+.bodyLarge      { font: var(--md-sys-typescale-body-large); letter-spacing: var(--md-sys-typescale-body-large-tracking); }
+.bodyMedium     { font: var(--md-sys-typescale-body-medium); letter-spacing: var(--md-sys-typescale-body-medium-tracking); }
+.bodySmall      { font: var(--md-sys-typescale-body-small); letter-spacing: var(--md-sys-typescale-body-small-tracking); }
+.labelLarge     { font: var(--md-sys-typescale-label-large); letter-spacing: var(--md-sys-typescale-label-large-tracking); }
+.labelMedium    { font: var(--md-sys-typescale-label-medium); letter-spacing: var(--md-sys-typescale-label-medium-tracking); }
+.onSurfaceVariant { color: var(--md-sys-color-on-surface-variant); }
+
+/* =========================================================
+   State layer
+   ========================================================= */
+.mdState { position: relative; overflow: hidden; isolation: isolate; -webkit-tap-highlight-color: transparent; }
+.mdState::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: currentColor; opacity: 0; pointer-events: none;
+  transition: opacity var(--md-sys-motion-duration-short2) var(--md-sys-motion-easing-standard);
+}
+.mdState:hover::before { opacity: var(--md-sys-state-hover-opacity); }
+.mdState:focus-visible::before { opacity: var(--md-sys-state-focus-opacity); }
+.mdState:active::before { opacity: var(--md-sys-state-pressed-opacity); }
+:focus-visible { outline: 3px solid var(--md-sys-color-secondary); outline-offset: 2px; }
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+.mdButton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 40px; min-width: 48px; padding-inline: 24px; border: none;
+  border-radius: var(--md-sys-shape-corner-full);
+  font: var(--md-sys-typescale-label-large); letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  text-decoration: none; cursor: pointer;
+  transition: box-shadow var(--md-sys-motion-duration-short3) var(--md-sys-motion-easing-standard);
+}
+/* 見た目40pxでも当たり判定は48px */
+.mdButton::after { content: ""; position: absolute; inset: -4px 0; }
+.mdButton { overflow: visible; }
+.mdButton::before { border-radius: inherit; }
+.mdButton .material-symbols-rounded { font-size: 18px; }
+.mdButton--withIcon { padding-inline-start: 16px; }
+.mdButton--filled   { background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); }
+.mdButton--filled:hover { box-shadow: var(--md-sys-elevation-1); }
+.mdButton--tonal    { background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-on-secondary-container); }
+.mdButton--outlined { background: transparent; color: var(--md-sys-color-primary); border: 1px solid var(--md-sys-color-outline); }
+.mdButton--text     { background: transparent; color: var(--md-sys-color-primary); padding-inline: 12px; }
+.mdButton:disabled {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+  border-color: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+  box-shadow: none; cursor: default;
+}
+.mdButton:disabled::before { display: none; }
+
+.mdIconButton {
+  display: inline-grid; place-items: center;
+  width: 48px; height: 48px; padding: 4px; border: none; background: transparent;
+  color: var(--md-sys-color-on-surface-variant); cursor: pointer; text-decoration: none;
+  border-radius: var(--md-sys-shape-corner-full);
+}
+.mdIconButton::before { inset: 4px; border-radius: var(--md-sys-shape-corner-full); }
+
+/* =========================================================
+   Top app bar
+   ========================================================= */
+.topAppBar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: 4px;
+  height: 64px; padding-inline: 4px 8px;
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  transition: background var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-standard);
+}
+.topAppBar.isScrolled { background: var(--md-sys-color-surface-container); }
+.topAppBar__title { flex: 1; padding-inline-start: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* =========================================================
+   Layout + navigation (window size classes)
+   ========================================================= */
+.appShell { display: block; }
+.appMain { padding-bottom: 96px; }
+.contentColumn { max-width: 1040px; margin: 0 auto; padding-inline: 16px; }
+
+/* Navigation Bar (Compact) */
+.navBar {
+  position: fixed; inset: auto 0 0 0; z-index: 20;
+  display: flex; height: 80px;
+  background: var(--md-sys-color-surface-container);
+}
+.navItem {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  padding-block: 12px 16px; min-width: 48px;
+  color: var(--md-sys-color-on-surface-variant); text-decoration: none;
+  font: var(--md-sys-typescale-label-medium); letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+  overflow: visible;
+}
+.navItem::before { display: none; }
+.navItem__indicator {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: grid; place-items: center;
+  width: 64px; height: 32px; border-radius: var(--md-sys-shape-corner-full);
+  transition: background var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+.navItem__indicator::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; background: var(--md-sys-color-on-surface);
+  opacity: 0; transition: opacity var(--md-sys-motion-duration-short2) var(--md-sys-motion-easing-standard);
+}
+.navItem:hover .navItem__indicator::before { opacity: var(--md-sys-state-hover-opacity); }
+.navItem:active .navItem__indicator::before { opacity: var(--md-sys-state-pressed-opacity); }
+.navItem:focus-visible { outline: none; }
+.navItem:focus-visible .navItem__indicator { outline: 3px solid var(--md-sys-color-secondary); outline-offset: 2px; }
+.navItem[aria-current="true"] { color: var(--md-sys-color-on-surface); }
+.navItem[aria-current="true"] .navItem__indicator {
+  background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-on-secondary-container);
+}
+.navItem[aria-current="true"] .material-symbols-rounded { font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24; }
+
+/* Medium+ : Navigation Rail */
+@media (min-width: 600px) {
+  .appShell { display: grid; grid-template-columns: 80px 1fr; }
+  .navBar {
+    position: sticky; top: 0; inset: auto; height: 100vh;
+    flex-direction: column; justify-content: center; gap: 12px;
+    width: 80px; background: var(--md-sys-color-surface);
+    border-inline-end: 1px solid var(--md-sys-color-outline-variant);
+  }
+  .navItem { flex: 0 0 auto; padding-block: 4px; }
+  .navItem__indicator { width: 56px; }
+  .appMain { padding-bottom: 48px; }
+  .contentColumn { padding-inline: 24px; }
+}
+
+/* =========================================================
+   Sections
+   ========================================================= */
+.section { padding-block: 40px; }
+.sectionHeader { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.sectionHeader .material-symbols-rounded { color: var(--md-sys-color-primary); }
+
+/* Hero */
+.hero {
+  display: grid; gap: 24px; align-items: center;
+  margin-top: 8px; padding: 24px;
+  border-radius: var(--md-sys-shape-corner-extra-large);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+.hero__avatar {
+  width: 112px; height: 112px; display: grid; place-items: center;
+  border-radius: var(--md-sys-shape-corner-extra-large);
+  background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary);
+  font: var(--md-sys-typescale-display-small);
+}
+.hero__role { margin-top: 4px; }
+.hero__lead { margin-top: 16px; max-width: 56ch; }
+.hero__meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 16px; }
+.hero__metaItem { display: inline-flex; align-items: center; gap: 6px; }
+.hero__metaItem .material-symbols-rounded { font-size: 20px; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.hero .mdButton--outlined { color: var(--md-sys-color-on-primary-container); border-color: var(--md-sys-color-on-primary-container); }
+.statusBadge {
+  display: inline-flex; align-items: center; gap: 8px; height: 32px; padding-inline: 12px;
+  border-radius: var(--md-sys-shape-corner-small);
+  background: var(--md-sys-color-tertiary-container); color: var(--md-sys-color-on-tertiary-container);
+  margin-bottom: 16px;
+}
+.statusBadge__dot { width: 8px; height: 8px; border-radius: var(--md-sys-shape-corner-full); background: var(--md-sys-color-tertiary); }
+@media (min-width: 840px) {
+  .hero { grid-template-columns: auto 1fr; gap: 40px; padding: 48px; }
+  .hero__avatar { width: 160px; height: 160px; font: var(--md-sys-typescale-display-medium); }
+}
+
+/* Stats */
+.statGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 24px; }
+@media (min-width: 840px) { .statGrid { grid-template-columns: repeat(4, 1fr); } }
+.statCard {
+  padding: 16px; border-radius: var(--md-sys-shape-corner-large);
+  background: var(--md-sys-color-surface-container);
+}
+.statCard__value { color: var(--md-sys-color-primary); }
+
+/* Cards */
+.cardGrid { display: grid; gap: 16px; }
+@media (min-width: 600px) { .cardGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1200px) { .cardGrid--three { grid-template-columns: repeat(3, 1fr); } }
+.mdCard { border-radius: var(--md-sys-shape-corner-medium); padding: 16px; }
+.mdCard--elevated { background: var(--md-sys-color-surface-container-low); box-shadow: var(--md-sys-elevation-1); }
+.mdCard--filled   { background: var(--md-sys-color-surface-container-highest); }
+.mdCard--outlined { background: var(--md-sys-color-surface); border: 1px solid var(--md-sys-color-outline-variant); }
+.serviceCard__icon {
+  width: 48px; height: 48px; display: grid; place-items: center; margin-bottom: 16px;
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-on-secondary-container);
+}
+.serviceCard p { margin-top: 8px; }
+.serviceCard__price { margin-top: 16px; color: var(--md-sys-color-primary); }
+
+/* Works */
+.workCard { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.workCard__media {
+  aspect-ratio: 16 / 9; display: grid; place-items: center;
+  background: var(--md-sys-color-tertiary-container); color: var(--md-sys-color-on-tertiary-container);
+}
+.workCard__media--alt { background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-on-secondary-container); }
+.workCard__media--primary { background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); }
+.workCard__media .material-symbols-rounded { font-size: 48px; }
+.workCard__body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.workCard__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 8px; }
+
+/* Chips */
+.chipSet { display: flex; flex-wrap: wrap; gap: 8px; }
+.mdChip {
+  display: inline-flex; align-items: center; gap: 8px; height: 32px; padding-inline: 16px;
+  border-radius: var(--md-sys-shape-corner-small);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface-variant); background: transparent;
+  font: var(--md-sys-typescale-label-large); letter-spacing: var(--md-sys-typescale-label-large-tracking);
+}
+.mdChip--small { height: 24px; padding-inline: 8px; font: var(--md-sys-typescale-label-medium); }
+button.mdChip { cursor: pointer; padding-inline: 8px 16px; overflow: visible; }
+button.mdChip::before { border-radius: inherit; }
+button.mdChip::after { content: ""; position: absolute; inset: -8px 0; }
+button.mdChip .material-symbols-rounded { font-size: 18px; width: 0; opacity: 0; transition: width var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized), opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard); }
+button.mdChip[aria-pressed="true"] {
+  border-color: transparent; background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-on-secondary-container);
+}
+button.mdChip[aria-pressed="true"] .material-symbols-rounded { width: 18px; opacity: 1; }
+
+/* Skills */
+.skillGroup + .skillGroup { margin-top: 24px; }
+.skillGroup__title { margin-bottom: 12px; }
+.skillList { display: grid; gap: 16px; }
+@media (min-width: 840px) { .skillList { grid-template-columns: repeat(2, 1fr); column-gap: 32px; } }
+.skillItem__row { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.linearProgress {
+  height: 4px; border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-secondary-container); overflow: hidden;
+}
+.linearProgress__bar {
+  height: 100%; border-radius: inherit; background: var(--md-sys-color-primary);
+  transform-origin: left; transform: scaleX(0);
+  transition: transform var(--md-sys-motion-duration-long2) var(--md-sys-motion-easing-emphasized-decelerate);
+}
+
+/* Timeline (list) */
+.timeline { display: grid; gap: 0; }
+.timelineItem { display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding-block: 12px; }
+.timelineItem__icon {
+  width: 40px; height: 40px; display: grid; place-items: center;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-surface-container-high); color: var(--md-sys-color-on-surface-variant);
+}
+.timelineItem__icon .material-symbols-rounded { font-size: 20px; }
+.timelineItem p { margin-top: 4px; }
+.mdDivider { height: 1px; border: none; margin: 0 0 0 56px; background: var(--md-sys-color-outline-variant); }
+
+/* Filter result */
+.workCard[hidden] { display: none; }
+.emptyState { padding: 24px; text-align: center; }
+
+/* Contact form */
+.contactLayout { display: grid; gap: 24px; }
+@media (min-width: 840px) { .contactLayout { grid-template-columns: 1fr 1.4fr; align-items: start; } }
+.contactInfo { display: grid; gap: 8px; }
+.contactInfo__row {
+  display: flex; align-items: center; gap: 16px; min-height: 56px; padding-inline: 16px;
+  border-radius: var(--md-sys-shape-corner-large); color: var(--md-sys-color-on-surface); text-decoration: none;
+  background: var(--md-sys-color-surface-container-low);
+}
+.contactInfo__row::before { border-radius: inherit; }
+.contactInfo__row .material-symbols-rounded { color: var(--md-sys-color-on-surface-variant); }
+.form { display: grid; gap: 8px; padding: 24px; border-radius: var(--md-sys-shape-corner-extra-large); background: var(--md-sys-color-surface-container-low); }
+.textField { position: relative; display: block; }
+.textField__input {
+  width: 100%; min-height: 56px; padding: 24px 16px 8px; border: none;
+  border-radius: var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) 0 0;
+  background: var(--md-sys-color-surface-container-highest); color: var(--md-sys-color-on-surface);
+  font: var(--md-sys-typescale-body-large); letter-spacing: var(--md-sys-typescale-body-large-tracking);
+  box-shadow: inset 0 -1px 0 var(--md-sys-color-on-surface-variant);
+  outline: none; resize: vertical;
+  transition: box-shadow var(--md-sys-motion-duration-short2) var(--md-sys-motion-easing-standard);
+}
+.textField__input:hover { box-shadow: inset 0 -1px 0 var(--md-sys-color-on-surface); }
+.textField__input:focus { box-shadow: inset 0 -2px 0 var(--md-sys-color-primary); }
+textarea.textField__input { min-height: 136px; }
+.textField__label {
+  position: absolute; left: 16px; top: 16px; pointer-events: none;
+  color: var(--md-sys-color-on-surface-variant);
+  font: var(--md-sys-typescale-body-large);
+  transition: transform var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard), color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  transform-origin: left top;
+}
+.textField__input:focus + .textField__label,
+.textField__input:not(:placeholder-shown) + .textField__label {
+  transform: translateY(-8px) scale(0.75); /* body-large 16px → body-small 12px */
+}
+.textField__input:focus + .textField__label { color: var(--md-sys-color-primary); }
+.textField__support { display: flex; align-items: center; gap: 4px; min-height: 20px; padding: 4px 16px 0; color: var(--md-sys-color-on-surface-variant); }
+.textField__errorIcon { display: none; position: absolute; right: 12px; top: 16px; color: var(--md-sys-color-error); }
+.textField.isInvalid .textField__input { box-shadow: inset 0 -2px 0 var(--md-sys-color-error); padding-right: 48px; }
+.textField.isInvalid .textField__label,
+.textField.isInvalid .textField__support { color: var(--md-sys-color-error); }
+.textField.isInvalid .textField__errorIcon { display: block; }
+.form__actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+
+/* Snackbar */
+.snackbar {
+  position: fixed; left: 16px; right: 16px; bottom: 96px; z-index: 30;
+  display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 4px 8px 4px 16px;
+  max-width: 560px; margin-inline: auto;
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  background: var(--md-sys-color-inverse-surface); color: var(--md-sys-color-inverse-on-surface);
+  box-shadow: var(--md-sys-elevation-3);
+  transform: translateY(16px); opacity: 0; pointer-events: none;
+  transition: transform var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-emphasized-decelerate), opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+.snackbar.isOpen { transform: none; opacity: 1; pointer-events: auto; }
+.snackbar__text { flex: 1; }
+.snackbar .mdButton--text { color: var(--md-sys-color-inverse-primary); }
+@media (min-width: 600px) { .snackbar { bottom: 24px; left: 104px; } }
+
+/* Footer */
+.footer { padding-block: 32px; text-align: center; }
+
+/* Entrance motion */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity var(--md-sys-motion-duration-long2) var(--md-sys-motion-easing-emphasized-decelerate), transform var(--md-sys-motion-duration-long2) var(--md-sys-motion-easing-emphasized-decelerate); }
+.reveal.isVisible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+<div class="appShell">
+  <!-- Navigation: Compact = Navigation Bar（下部） / Medium+ = Navigation Rail（左） -->
+  <nav class="navBar" aria-label="セクションナビゲーション">
+    <a class="navItem" href="#about" aria-current="true"><span class="navItem__indicator"><span class="material-symbols-rounded" aria-hidden="true">person</span></span>About</a>
+    <a class="navItem" href="#skills"><span class="navItem__indicator"><span class="material-symbols-rounded" aria-hidden="true">construction</span></span>Skills</a>
+    <a class="navItem" href="#works"><span class="navItem__indicator"><span class="material-symbols-rounded" aria-hidden="true">work</span></span>Works</a>
+    <a class="navItem" href="#contact"><span class="navItem__indicator"><span class="material-symbols-rounded" aria-hidden="true">mail</span></span>Contact</a>
+  </nav>
+
+  <div>
+    <header class="topAppBar" id="topAppBar">
+      <span class="topAppBar__title titleLarge">Hikari Sato</span>
+      <a class="mdIconButton mdState" href="https://github.com/" aria-label="GitHub（外部サイト）" target="_blank" rel="noopener"><span class="material-symbols-rounded" aria-hidden="true">code</span></a>
+      <button class="mdIconButton mdState" id="themeToggle" type="button" aria-label="ダークモードに切り替え"><span class="material-symbols-rounded" aria-hidden="true">dark_mode</span></button>
+    </header>
+
+    <main class="appMain">
+      <div class="contentColumn">
+
+        <!-- ===== About ===== -->
+        <section id="about" aria-labelledby="aboutTitle">
+          <div class="hero">
+            <div class="hero__avatar" aria-hidden="true">ひ</div>
+            <div>
+              <span class="statusBadge labelLarge"><span class="statusBadge__dot" aria-hidden="true"></span>2027年1月〜 新規案件受付中</span>
+              <h1 class="displaySmall" id="aboutTitle">佐藤 ひかり</h1>
+              <p class="hero__role titleLarge">UI/UX デザイナー ／ フロントエンドエンジニア</p>
+              <p class="hero__lead bodyLarge">「使いやすさ」を設計からコードまで一貫して届けるフリーランスです。SaaS・業務システムのUI改善を中心に、リサーチからデザインシステム構築、Next.js での実装まで一人で、またはチームの一員として伴走します。</p>
+              <ul class="hero__meta bodyMedium">
+                <li class="hero__metaItem"><span class="material-symbols-rounded" aria-hidden="true">location_on</span>東京都（リモート中心）</li>
+                <li class="hero__metaItem"><span class="material-symbols-rounded" aria-hidden="true">schedule</span>週3〜4日稼働</li>
+                <li class="hero__metaItem"><span class="material-symbols-rounded" aria-hidden="true">translate</span>日本語 / 英語（ビジネス）</li>
+              </ul>
+              <div class="hero__actions">
+                <a class="mdButton mdButton--filled mdButton--withIcon mdState" href="#contact"><span class="material-symbols-rounded" aria-hidden="true">send</span>相談してみる</a>
+                <a class="mdButton mdButton--outlined mdState" href="#works">実績を見る</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="statGrid">
+            <div class="statCard reveal"><p class="headlineLarge statCard__value">9<span class="titleMedium">年</span></p><p class="bodyMedium onSurfaceVariant">実務経験</p></div>
+            <div class="statCard reveal"><p class="headlineLarge statCard__value">60<span class="titleMedium">+</span></p><p class="bodyMedium onSurfaceVariant">支援プロジェクト</p></div>
+            <div class="statCard reveal"><p class="headlineLarge statCard__value">85<span class="titleMedium">%</span></p><p class="bodyMedium onSurfaceVariant">継続・リピート率</p></div>
+            <div class="statCard reveal"><p class="headlineLarge statCard__value">4.9</p><p class="bodyMedium onSurfaceVariant">クライアント評価</p></div>
+          </div>
+
+          <div class="section">
+            <div class="sectionHeader"><span class="material-symbols-rounded" aria-hidden="true">handshake</span><h2 class="headlineSmall">提供できること</h2></div>
+            <div class="cardGrid cardGrid--three">
+              <article class="mdCard mdCard--outlined serviceCard reveal">
+                <div class="serviceCard__icon"><span class="material-symbols-rounded" aria-hidden="true">travel_explore</span></div>
+                <h3 class="titleMedium">UXリサーチ・設計</h3>
+                <p class="bodyMedium onSurfaceVariant">ユーザーインタビュー、ペルソナ・カスタマージャーニー作成、情報設計まで。課題の言語化から始めます。</p>
+                <p class="serviceCard__price labelLarge">¥400,000〜 / 案件</p>
+              </article>
+              <article class="mdCard mdCard--outlined serviceCard reveal">
+                <div class="serviceCard__icon"><span class="material-symbols-rounded" aria-hidden="true">palette</span></div>
+                <h3 class="titleMedium">UIデザイン・デザインシステム</h3>
+                <p class="bodyMedium onSurfaceVariant">Figma でのUI設計、Material Design 3 などに準拠したトークン・コンポーネント設計と運用ルール整備。</p>
+                <p class="serviceCard__price labelLarge">¥600,000〜 / 月</p>
+              </article>
+              <article class="mdCard mdCard--outlined serviceCard reveal">
+                <div class="serviceCard__icon"><span class="material-symbols-rounded" aria-hidden="true">terminal</span></div>
+                <h3 class="titleMedium">フロントエンド実装</h3>
+                <p class="bodyMedium onSurfaceVariant">Next.js + TypeScript での実装、アクセシビリティ改善、パフォーマンスチューニング。テストまで書きます。</p>
+                <p class="serviceCard__price labelLarge">¥7,000〜 / 時間</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Skills ===== -->
+        <section id="skills" class="section" aria-labelledby="skillsTitle">
+          <div class="sectionHeader"><span class="material-symbols-rounded" aria-hidden="true">construction</span><h2 class="headlineSmall" id="skillsTitle">スキル</h2></div>
+
+          <div class="mdCard mdCard--elevated reveal">
+            <div class="skillGroup">
+              <h3 class="titleSmall skillGroup__title onSurfaceVariant">習熟度</h3>
+              <ul class="skillList" id="skillList"></ul>
+            </div>
+            <div class="skillGroup">
+              <h3 class="titleSmall skillGroup__title onSurfaceVariant">ツール・技術</h3>
+              <ul class="chipSet">
+                <li class="mdChip">Figma</li><li class="mdChip">Next.js</li><li class="mdChip">React</li>
+                <li class="mdChip">TypeScript</li><li class="mdChip">Tailwind CSS</li><li class="mdChip">MUI</li>
+                <li class="mdChip">Storybook</li><li class="mdChip">Playwright</li><li class="mdChip">Vercel</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sectionHeader" style="margin-top:40px"><span class="material-symbols-rounded" aria-hidden="true">history</span><h2 class="headlineSmall">経歴</h2></div>
+          <ol class="timeline reveal" style="list-style:none;padding:0;margin:0">
+            <li class="timelineItem">
+              <span class="timelineItem__icon"><span class="material-symbols-rounded" aria-hidden="true">rocket_launch</span></span>
+              <div><p class="labelMedium onSurfaceVariant">2021 — 現在</p><h3 class="titleMedium">フリーランスとして独立</h3><p class="bodyMedium onSurfaceVariant">SaaS企業・スタートアップを中心に、デザインと実装の両面から支援。</p></div>
+            </li>
+            <li><hr class="mdDivider" /></li>
+            <li class="timelineItem">
+              <span class="timelineItem__icon"><span class="material-symbols-rounded" aria-hidden="true">apartment</span></span>
+              <div><p class="labelMedium onSurfaceVariant">2019 — 2021</p><h3 class="titleMedium">SaaS企業 プロダクトデザイナー</h3><p class="bodyMedium onSurfaceVariant">デザインシステムの立ち上げと全プロダクトへの展開をリード。</p></div>
+            </li>
+            <li><hr class="mdDivider" /></li>
+            <li class="timelineItem">
+              <span class="timelineItem__icon"><span class="material-symbols-rounded" aria-hidden="true">devices</span></span>
+              <div><p class="labelMedium onSurfaceVariant">2017 — 2019</p><h3 class="titleMedium">Web制作会社 フロントエンドエンジニア</h3><p class="bodyMedium onSurfaceVariant">コーポレートサイト・ECサイトのフロントエンド開発を担当。</p></div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- ===== Works ===== -->
+        <section id="works" class="section" aria-labelledby="worksTitle">
+          <div class="sectionHeader"><span class="material-symbols-rounded" aria-hidden="true">work</span><h2 class="headlineSmall" id="worksTitle">実績</h2></div>
+
+          <div class="chipSet" role="group" aria-label="実績の絞り込み" style="margin-bottom:16px">
+            <button class="mdChip mdState" type="button" data-filter="design" aria-pressed="false"><span class="material-symbols-rounded" aria-hidden="true">check</span>デザイン</button>
+            <button class="mdChip mdState" type="button" data-filter="dev" aria-pressed="false"><span class="material-symbols-rounded" aria-hidden="true">check</span>開発</button>
+            <button class="mdChip mdState" type="button" data-filter="research" aria-pressed="false"><span class="material-symbols-rounded" aria-hidden="true">check</span>リサーチ</button>
+          </div>
+
+          <div class="cardGrid cardGrid--three" id="workGrid">
+            <article class="mdCard mdCard--filled workCard reveal" data-tags="design dev">
+              <div class="workCard__media workCard__media--primary"><span class="material-symbols-rounded" aria-hidden="true">dashboard</span></div>
+              <div class="workCard__body">
+                <h3 class="titleMedium">勤怠管理SaaS ダッシュボード刷新</h3>
+                <p class="bodyMedium onSurfaceVariant">情報設計の見直しとコンポーネント化で、主要タスクの完了時間を約40%短縮。</p>
+                <div class="workCard__chips"><span class="mdChip mdChip--small">UIデザイン</span><span class="mdChip mdChip--small">Next.js</span></div>
+              </div>
+            </article>
+            <article class="mdCard mdCard--filled workCard reveal" data-tags="design">
+              <div class="workCard__media workCard__media--alt"><span class="material-symbols-rounded" aria-hidden="true">widgets</span></div>
+              <div class="workCard__body">
+                <h3 class="titleMedium">金融系アプリ デザインシステム構築</h3>
+                <p class="bodyMedium onSurfaceVariant">M3ベースのトークン設計とFigmaライブラリを整備。ダークモード対応を工数半減で実現。</p>
+                <div class="workCard__chips"><span class="mdChip mdChip--small">デザインシステム</span><span class="mdChip mdChip--small">Figma</span></div>
+              </div>
+            </article>
+            <article class="mdCard mdCard--filled workCard reveal" data-tags="research design">
+              <div class="workCard__media"><span class="material-symbols-rounded" aria-hidden="true">forum</span></div>
+              <div class="workCard__body">
+                <h3 class="titleMedium">医療予約サービス UXリサーチ</h3>
+                <p class="bodyMedium onSurfaceVariant">20名へのインタビューから離脱要因を特定し、予約フローを再設計。CVR 1.6倍に。</p>
+                <div class="workCard__chips"><span class="mdChip mdChip--small">リサーチ</span><span class="mdChip mdChip--small">プロトタイプ</span></div>
+              </div>
+            </article>
+            <article class="mdCard mdCard--filled workCard reveal" data-tags="dev">
+              <div class="workCard__media workCard__media--alt"><span class="material-symbols-rounded" aria-hidden="true">accessibility_new</span></div>
+              <div class="workCard__body">
+                <h3 class="titleMedium">自治体ポータル アクセシビリティ改修</h3>
+                <p class="bodyMedium onSurfaceVariant">WCAG 2.2 AA 準拠に向けた監査と改修。スクリーンリーダー操作の課題を全件解消。</p>
+                <div class="workCard__chips"><span class="mdChip mdChip--small">a11y</span><span class="mdChip mdChip--small">React</span></div>
+              </div>
+            </article>
+            <article class="mdCard mdCard--filled workCard reveal" data-tags="dev design">
+              <div class="workCard__media workCard__media--primary"><span class="material-symbols-rounded" aria-hidden="true">shopping_bag</span></div>
+              <div class="workCard__body">
+                <h3 class="titleMedium">D2Cブランド ECサイト構築</h3>
+                <p class="bodyMedium onSurfaceVariant">デザインからヘッドレスEC実装まで一貫担当。LCP 1.2秒を達成。</p>
+                <div class="workCard__chips"><span class="mdChip mdChip--small">EC</span><span class="mdChip mdChip--small">パフォーマンス</span></div>
+              </div>
+            </article>
+            <article class="mdCard mdCard--filled workCard reveal" data-tags="research">
+              <div class="workCard__media"><span class="material-symbols-rounded" aria-hidden="true">insights</span></div>
+              <div class="workCard__body">
+                <h3 class="titleMedium">BtoB SaaS ユーザビリティテスト</h3>
+                <p class="bodyMedium onSurfaceVariant">定期的なテスト運用の仕組みを導入し、改善サイクルを月次で回せる体制に。</p>
+                <div class="workCard__chips"><span class="mdChip mdChip--small">リサーチ</span><span class="mdChip mdChip--small">運用設計</span></div>
+              </div>
+            </article>
+          </div>
+          <p class="emptyState bodyMedium onSurfaceVariant" id="emptyState" hidden>該当する実績がありません。</p>
+        </section>
+
+        <!-- ===== Contact ===== -->
+        <section id="contact" class="section" aria-labelledby="contactTitle">
+          <div class="sectionHeader"><span class="material-symbols-rounded" aria-hidden="true">mail</span><h2 class="headlineSmall" id="contactTitle">お問い合わせ</h2></div>
+          <div class="contactLayout">
+            <div>
+              <p class="bodyLarge onSurfaceVariant" style="margin-bottom:16px">案件のご相談・お見積りはお気軽にどうぞ。2営業日以内にご返信します。</p>
+              <div class="contactInfo">
+                <a class="contactInfo__row mdState" href="mailto:hello@example.com"><span class="material-symbols-rounded" aria-hidden="true">alternate_email</span><span class="bodyLarge">hello@example.com</span></a>
+                <a class="contactInfo__row mdState" href="https://x.com/" target="_blank" rel="noopener"><span class="material-symbols-rounded" aria-hidden="true">tag</span><span class="bodyLarge">@hikari_design</span></a>
+                <a class="contactInfo__row mdState" href="#" ><span class="material-symbols-rounded" aria-hidden="true">calendar_month</span><span class="bodyLarge">30分の無料相談を予約</span></a>
+              </div>
+            </div>
+
+            <form class="form" id="contactForm" novalidate>
+              <label class="textField" data-field="name">
+                <input class="textField__input" name="name" type="text" placeholder=" " autocomplete="name" required aria-describedby="nameSupport" />
+                <span class="textField__label">お名前 *</span>
+                <span class="material-symbols-rounded textField__errorIcon" aria-hidden="true">error</span>
+                <span class="textField__support bodySmall" id="nameSupport">必須</span>
+              </label>
+              <label class="textField" data-field="email">
+                <input class="textField__input" name="email" type="email" placeholder=" " autocomplete="email" required aria-describedby="emailSupport" />
+                <span class="textField__label">メールアドレス *</span>
+                <span class="material-symbols-rounded textField__errorIcon" aria-hidden="true">error</span>
+                <span class="textField__support bodySmall" id="emailSupport">返信先のアドレス</span>
+              </label>
+              <label class="textField" data-field="message">
+                <textarea class="textField__input" name="message" placeholder=" " required aria-describedby="messageSupport"></textarea>
+                <span class="textField__label">ご相談内容 *</span>
+                <span class="material-symbols-rounded textField__errorIcon" aria-hidden="true">error</span>
+                <span class="textField__support bodySmall" id="messageSupport">期間・ご予算の目安があればご記入ください</span>
+              </label>
+              <div class="form__actions">
+                <button class="mdButton mdButton--text mdState" type="reset">クリア</button>
+                <button class="mdButton mdButton--filled mdButton--withIcon mdState" type="submit"><span class="material-symbols-rounded" aria-hidden="true">send</span>送信する</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <footer class="footer bodySmall onSurfaceVariant">© 2026 Hikari Sato</footer>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="snackbar" id="snackbar" role="status" aria-live="polite">
+  <span class="snackbar__text bodyMedium" id="snackbarText"></span>
+  <button class="mdButton mdButton--text mdState" type="button" id="snackbarClose">閉じる</button>
+</div>
+
+<script>
+  const SKILLS = [
+    { name: "UI デザイン", level: 95 },
+    { name: "デザインシステム設計", level: 90 },
+    { name: "React / Next.js", level: 85 },
+    { name: "UX リサーチ", level: 80 },
+    { name: "アクセシビリティ", level: 80 },
+    { name: "TypeScript", level: 75 },
+  ];
+  const SNACKBAR_DURATION_MS = 5000;
+  const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  /* ---------- Theme ---------- */
+  const themeToggle = document.getElementById("themeToggle");
+
+  function getCurrentTheme() {
+    const explicitTheme = document.documentElement.dataset.theme;
+    if (explicitTheme) return explicitTheme;
+    return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    const isDark = theme === "dark";
+    themeToggle.querySelector(".material-symbols-rounded").textContent = isDark ? "light_mode" : "dark_mode";
+    themeToggle.setAttribute("aria-label", isDark ? "ライトモードに切り替え" : "ダークモードに切り替え");
+  }
+
+  function loadSavedTheme() {
+    try { return localStorage.getItem("profileTheme"); } catch { return null; }
+  }
+
+  function saveTheme(theme) {
+    try { localStorage.setItem("profileTheme", theme); } catch { /* storage unavailable */ }
+  }
+
+  const savedTheme = loadSavedTheme();
+  if (savedTheme) applyTheme(savedTheme); else applyTheme(getCurrentTheme());
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = getCurrentTheme() === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+    saveTheme(nextTheme);
+  });
+
+  /* ---------- Top app bar on scroll ---------- */
+  const topAppBar = document.getElementById("topAppBar");
+  function updateTopAppBar() { topAppBar.classList.toggle("isScrolled", window.scrollY > 0); }
+  addEventListener("scroll", updateTopAppBar, { passive: true });
+  updateTopAppBar();
+
+  /* ---------- Skills ---------- */
+  function renderSkills() {
+    const skillList = document.getElementById("skillList");
+    skillList.innerHTML = SKILLS.map((skill) => `
+      <li class="skillItem">
+        <div class="skillItem__row"><span class="bodyLarge">${skill.name}</span><span class="labelLarge onSurfaceVariant">${skill.level}%</span></div>
+        <div class="linearProgress" role="progressbar" aria-label="${skill.name}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${skill.level}">
+          <div class="linearProgress__bar" data-level="${skill.level}"></div>
+        </div>
+      </li>`).join("");
+  }
+  renderSkills();
+
+  /* ---------- Reveal + progress animation ---------- */
+  function revealElement(element) {
+    element.classList.add("isVisible");
+    element.querySelectorAll(".linearProgress__bar").forEach((bar) => {
+      bar.style.transform = `scaleX(${Number(bar.dataset.level) / 100})`;
+    });
+  }
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      revealElement(entry.target);
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+  /* ---------- Active navigation item ---------- */
+  const navItems = [...document.querySelectorAll(".navItem")];
+  function setActiveNavItem(sectionId) {
+    navItems.forEach((item) => {
+      if (item.getAttribute("href") === `#${sectionId}`) item.setAttribute("aria-current", "true");
+      else item.removeAttribute("aria-current");
+    });
+  }
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => { if (entry.isIntersecting) setActiveNavItem(entry.target.id); });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  ["about", "skills", "works", "contact"].forEach((id) => sectionObserver.observe(document.getElementById(id)));
+
+  /* ---------- Works filter (filter chips) ---------- */
+  const filterChips = [...document.querySelectorAll("[data-filter]")];
+  function filterWorks() {
+    const activeFilters = filterChips.filter((chip) => chip.getAttribute("aria-pressed") === "true").map((chip) => chip.dataset.filter);
+    let visibleCount = 0;
+    document.querySelectorAll("#workGrid .workCard").forEach((card) => {
+      const cardTags = card.dataset.tags.split(" ");
+      const isMatch = activeFilters.length === 0 || activeFilters.some((filter) => cardTags.includes(filter));
+      card.hidden = !isMatch;
+      if (isMatch) { visibleCount += 1; revealElement(card); }
+    });
+    document.getElementById("emptyState").hidden = visibleCount > 0;
+  }
+  filterChips.forEach((chip) => chip.addEventListener("click", () => {
+    chip.setAttribute("aria-pressed", String(chip.getAttribute("aria-pressed") !== "true"));
+    filterWorks();
+  }));
+
+  /* ---------- Snackbar ---------- */
+  const snackbar = document.getElementById("snackbar");
+  let snackbarTimer;
+  function showSnackbar(message) {
+    document.getElementById("snackbarText").textContent = message;
+    snackbar.classList.add("isOpen");
+    clearTimeout(snackbarTimer);
+    snackbarTimer = setTimeout(hideSnackbar, SNACKBAR_DURATION_MS);
+  }
+  function hideSnackbar() { snackbar.classList.remove("isOpen"); }
+  document.getElementById("snackbarClose").addEventListener("click", hideSnackbar);
+
+  /* ---------- Contact form validation ---------- */
+  const contactForm = document.getElementById("contactForm");
+  const DEFAULT_SUPPORT_TEXTS = {};
+  contactForm.querySelectorAll(".textField").forEach((field) => {
+    DEFAULT_SUPPORT_TEXTS[field.dataset.field] = field.querySelector(".textField__support").textContent;
+  });
+
+  function getFieldError(input) {
+    const value = input.value.trim();
+    if (!value) return "入力してください";
+    if (input.type === "email" && !EMAIL_PATTERN.test(value)) return "メールアドレスの形式が正しくありません";
+    return "";
+  }
+
+  function validateField(field) {
+    const input = field.querySelector(".textField__input");
+    const errorMessage = getFieldError(input);
+    field.classList.toggle("isInvalid", Boolean(errorMessage));
+    input.setAttribute("aria-invalid", String(Boolean(errorMessage)));
+    field.querySelector(".textField__support").textContent = errorMessage || DEFAULT_SUPPORT_TEXTS[field.dataset.field];
+    return !errorMessage;
+  }
+
+  function resetFieldStates() {
+    contactForm.querySelectorAll(".textField").forEach((field) => {
+      field.classList.remove("isInvalid");
+      field.querySelector(".textField__input").removeAttribute("aria-invalid");
+      field.querySelector(".textField__support").textContent = DEFAULT_SUPPORT_TEXTS[field.dataset.field];
+    });
+  }
+
+  contactForm.querySelectorAll(".textField").forEach((field) => {
+    field.querySelector(".textField__input").addEventListener("blur", () => validateField(field));
+  });
+
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const fields = [...contactForm.querySelectorAll(".textField")];
+    const isValid = fields.map(validateField).every(Boolean);
+    if (!isValid) {
+      contactForm.querySelector('[aria-invalid="true"]').focus();
+      return;
+    }
+    contactForm.reset();
+    resetFieldStates();
+    showSnackbar("送信しました。2営業日以内にご連絡します。");
+  });
+  contactForm.addEventListener("reset", () => setTimeout(resetFieldStates));
+</script>
+</body>
+</html>
